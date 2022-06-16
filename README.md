@@ -1,6 +1,7 @@
 # electron-cpp-boilerplate
 An example of how to create an electron UI for a C++ backend.
-![Cattura](https://user-images.githubusercontent.com/84736467/174157781-17e69268-8677-4bf7-b38e-ab94828dee6e.PNG)
+![Cattura](https://user-images.githubusercontent.com/84736467/174158728-5668d8f8-545e-460b-afdf-f2c7f7a5066c.PNG)
+
 
 ## Setup
 ```
