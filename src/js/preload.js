@@ -12,6 +12,6 @@ window.addEventListener('DOMContentLoaded', () => {
     replaceText("#cpp-greeting", addon.helloCpp())
 
     for (const dependency of ['chrome', 'node', 'electron']) {
-        replaceText(`${dependency}-version`, process.versions[dependency])
+        replaceText(`#${dependency}-version`, process.versions[dependency])
     }
 })
