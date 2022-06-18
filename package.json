@@ -8,9 +8,9 @@
         "buildCpp": "cmake-js compile",
         "buildJs": "rollup --config",
         "build": "npm run buildCpp && npm run buildJs",
-        "start": "electron-forge start",
-        "package": "electron-forge package",
-        "make": "electron-forge make"
+        "start": "npm run build && electron-forge start",
+        "package": "npm run build && electron-forge package",
+        "make": "npm run build && electron-forge make"
     },
     "repository": {
         "type": "git",
