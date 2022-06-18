@@ -1,42 +1,70 @@
 {
-  "name": "electron-cpp-boilerplate",
-  "version": "1.0.0",
-  "description": "An example of how to create an electron UI for a C++ backend",
-  "main": "app/js/main.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "buildCpp": "cmake-js compile",
-    "buildJs": "rollup --config",
-    "build": "npm run buildCpp && npm run buildJs",
-    "start": "npm run build && electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/barsdeveloper/electron-cpp-boilerplate.git"
-  },
-  "keywords": [
-    "electron",
-    "cpp",
-    "boilerplate"
-  ],
-  "author": "barsdeveloper",
-  "license": "SEE LICENSE IN LICENSE",
-  "bugs": {
-    "url": "https://github.com/barsdeveloper/electron-cpp-boilerplate/issues"
-  },
-  "homepage": "https://github.com/barsdeveloper/electron-cpp-boilerplate#readme",
-  "devDependencies": {
-    "@electron-forge/cli": "^6.0.0-beta.63",
-    "@rollup/plugin-commonjs": "^22.0.0",
-    "cmake-js": "^6.3.2",
-    "electron": "^19.0.4",
-    "node-addon-api": "^5.0.0",
-    "node-api-headers": "^0.0.1",
-    "rollup": "^2.75.6"
-  },
-  "dependencies": {
-    "bindings": "^1.5.0"
-  }
+    "name": "electron-cpp-boilerplate",
+    "version": "1.0.0",
+    "description": "An example of how to create an electron UI for a C++ backend",
+    "main": "app/js/main.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "buildCpp": "cmake-js compile",
+        "buildJs": "rollup --config",
+        "build": "npm run buildCpp && npm run buildJs",
+        "start": "electron-forge start",
+        "package": "electron-forge package",
+        "make": "electron-forge make"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/barsdeveloper/electron-cpp-boilerplate.git"
+    },
+    "keywords": [
+        "electron",
+        "cpp",
+        "boilerplate"
+    ],
+    "author": "barsdeveloper",
+    "license": "SEE LICENSE IN LICENSE",
+    "bugs": {
+        "url": "https://github.com/barsdeveloper/electron-cpp-boilerplate/issues"
+    },
+    "homepage": "https://github.com/barsdeveloper/electron-cpp-boilerplate#readme",
+    "devDependencies": {
+        "@electron-forge/cli": "^6.0.0-beta.64",
+        "@electron-forge/maker-deb": "^6.0.0-beta.64",
+        "@electron-forge/maker-rpm": "^6.0.0-beta.64",
+        "@electron-forge/maker-squirrel": "^6.0.0-beta.64",
+        "@electron-forge/maker-zip": "^6.0.0-beta.64",
+        "@rollup/plugin-commonjs": "^22.0.0",
+        "cmake-js": "^6.3.2",
+        "electron": "^19.0.4",
+        "node-addon-api": "^5.0.0",
+        "node-api-headers": "^0.0.1",
+        "rollup": "^2.75.6"
+    },
+    "dependencies": {
+        "bindings": "^1.5.0",
+        "electron-squirrel-startup": "^1.0.0"
+    },
+    "config": {
+        "forge": {
+            "packagerConfig": {},
+            "makers": [
+                {
+                    "name": "@electron-forge/maker-squirrel",
+                    "config": {
+                        "name": "electron_cpp_boilerplate"
+                    }
+                },
+                {
+                    "name": "@electron-forge/maker-zip",
+                    "platforms": [
+                        "darwin"
+                    ]
+                },
+                {
+                    "name": "@electron-forge/maker-deb",
+                    "config": {}
+                }
+            ]
+        }
+    }
 }
